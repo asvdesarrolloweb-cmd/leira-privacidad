@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aviso Legal de Leira</title>
+<meta name="description" content="Identificación del titular, condiciones de acceso y uso, propiedad intelectual y régimen de responsabilidad de la app Leira.">
+<link rel="icon" href="data:,">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #fbfaf6;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --text: #1c211d;
+    --text-secondary: #565f58;
+    --text-faint: #8a9089;
+    --border: #e2e4dd;
+    --border-strong: #c9cdc2;
+    --accent: #2e6b32;
+    --accent-strong: #1f4d23;
+    --accent-soft: #eaf2e9;
+    --mark-bg: #1c211d;
+    --shadow: 0 1px 2px rgba(28, 33, 29, 0.04), 0 8px 24px rgba(28, 33, 29, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #18181b;
+      --surface: #202124;
+      --surface-raised: #24262a;
+      --text: #f2f3ef;
+      --text-secondary: #a7ada3;
+      --text-faint: #767c73;
+      --border: #34373a;
+      --border-strong: #45494c;
+      --accent: #34d399;
+      --accent-strong: #6ee7b7;
+      --accent-soft: rgba(52, 211, 153, 0.12);
+      --mark-bg: #34d399;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #18181b;
+    --surface: #202124;
+    --surface-raised: #24262a;
+    --text: #f2f3ef;
+    --text-secondary: #a7ada3;
+    --text-faint: #767c73;
+    --border: #34373a;
+    --border-strong: #45494c;
+    --accent: #34d399;
+    --accent-strong: #6ee7b7;
+    --accent-soft: rgba(52, 211, 153, 0.12);
+    --mark-bg: #34d399;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-strong); text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  /* ---------- Cabecera ---------- */
+  header.doc-head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 36px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    flex: none;
+  }
+
+  .brand-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  h1.doc-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.12;
+    margin: 4px 0 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-top: 4px;
+  }
+
+  .meta-chip {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  .doc-summary {
+    color: var(--text-secondary);
+    font-size: 16.5px;
+    max-width: 62ch;
+    margin: 6px 0 0;
+  }
+
+  /* ---------- Indice ---------- */
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow);
+  }
+
+  nav.toc h2 {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  nav.toc li a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 14.5px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 3px 0;
+  }
+
+  nav.toc li a:hover { color: var(--accent-strong); }
+
+  nav.toc .toc-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  /* ---------- Secciones ---------- */
+  section.doc-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    padding-top: 3px;
+  }
+
+  h2.section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-body { padding-left: 30px; max-width: 66ch; }
+  .section-body > *:first-child { margin-top: 0; }
+
+  .section-body p { margin: 0 0 14px; color: var(--text); }
+  .section-body p.muted { color: var(--text-secondary); }
+
+  h3.sub-title {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 22px 0 6px;
+    color: var(--text);
+  }
+
+  .section-body ul, .section-body ol.plain {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+  .section-body li { margin-bottom: 7px; }
+  .section-body li:last-child { margin-bottom: 0; }
+
+  /* Tarjeta de dato: icono + texto, usada para el bloque "qué datos recogemos" */
+  .data-block {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .data-block:last-child { margin-bottom: 0; }
+  .data-block h4 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .data-block h4 .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .data-block p { margin: 0; font-size: 14.5px; color: var(--text-secondary); }
+
+  /* Tabla de encargados de tratamiento */
+  .provider-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 4px 0 16px;
+  }
+  .provider-table th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    text-align: left;
+    padding: 0 12px 8px 0;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .provider-table td {
+    padding: 11px 12px 11px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+  .provider-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .provider-table tr:last-child td { border-bottom: none; }
+  .table-scroll { overflow-x: auto; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    color: var(--text);
+    margin: 4px 0 16px;
+  }
+  .callout strong { color: var(--accent-strong); }
+
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 4px 0 16px;
+  }
+  .right-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--surface);
+  }
+  .right-item .right-name { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+  .right-item .right-desc { font-size: 13px; color: var(--text-secondary); }
+
+  code.placeholder {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+
+  /* ---------- Pie ---------- */
+  footer.doc-foot {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+  .doc-foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--text-secondary); }
+  .back-top {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+  .legal-links {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .legal-links a { color: var(--text-secondary); }
+  .legal-links strong { color: var(--text); font-weight: 500; }
+  .legal-links .sep { color: var(--border-strong); }
+
+  @media (max-width: 620px) {
+    .page { padding: 36px 18px 72px; }
+    nav.toc ol { grid-template-columns: 1fr; }
+    .section-body { padding-left: 0; }
+    .section-head { gap: 8px; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="top">
+
+  <header class="doc-head">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 3C10.2 3 5.5 7.6 5.5 13.3 5.5 21 16 29 16 29s10.5-8 10.5-15.7C26.5 7.6 21.8 3 16 3z" fill="var(--mark-bg)"/>
+        <path d="M16 8.5v11M10.8 11.6l10.4 4.8M21.2 11.6L10.8 16.4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Leira</span>
+    </div>
+
+    <h1 class="doc-title">Aviso Legal</h1>
+
+    <div class="doc-meta">
+      <span class="meta-chip">Última actualización: 16 sep. 2026</span>
+      <span class="meta-chip">Versión de la app: 1.0.0</span>
+      <span class="meta-chip">com.leira.app</span>
+    </div>
+
+    <p class="doc-summary">
+      Este aviso legal identifica al titular de Leira y establece las condiciones de acceso y
+      uso de este sitio web y de la aplicación móvil, conforme a la Ley 34/2002, de 11 de julio,
+      de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE).
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Índice">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#titular"><span class="toc-num">01</span> Titular</a></li>
+      <li><a href="#objeto"><span class="toc-num">02</span> Objeto</a></li>
+      <li><a href="#condiciones"><span class="toc-num">03</span> Condiciones de acceso y uso</a></li>
+      <li><a href="#propiedad"><span class="toc-num">04</span> Propiedad intelectual e industrial</a></li>
+      <li><a href="#terceros"><span class="toc-num">05</span> Servicios y enlaces de terceros</a></li>
+      <li><a href="#responsabilidad"><span class="toc-num">06</span> Exclusión de responsabilidad</a></li>
+      <li><a href="#legislacion"><span class="toc-num">07</span> Legislación y jurisdicción</a></li>
+      <li><a href="#modificaciones"><span class="toc-num">08</span> Modificaciones</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section class="doc-section" id="titular">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Titular</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          En cumplimiento del deber de información del artículo 10 de la LSSI-CE, se indican a
+          continuación los datos identificativos del titular de la app Leira y de este sitio web:
+        </p>
+        <div class="data-block">
+          <h4><span class="dot"></span>Denominación o razón social</h4>
+          <p><code class="placeholder">[nombre completo o razón social del titular]</code></p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>NIF / CIF</h4>
+          <p><code class="placeholder">[NIF/CIF]</code></p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>Domicilio a efectos de notificaciones</h4>
+          <p><code class="placeholder">[domicilio a efectos de notificaciones]</code></p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>Correo electrónico de contacto</h4>
+          <p><a href="mailto:info.leira.app@gmail.com">info.leira.app@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="objeto">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Objeto</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Leira es una aplicación móvil para gestionar fincas rústicas a partir de su Referencia
+          Catastral: consulta de datos y geometría de la parcela en el mapa, ficha técnica,
+          puntos de interés, fotografías, gestión económica y seguimiento de cultivos. Este
+          aviso legal regula el acceso y uso tanto de este sitio web (donde se publican los
+          documentos legales de la app) como de la propia aplicación.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="condiciones">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Condiciones de acceso y uso</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          El acceso a este sitio web es gratuito y no requiere registro previo. El uso de la
+          aplicación puede hacerse como invitado (sin cuenta, con los datos guardados solo en tu
+          dispositivo) o mediante una cuenta con email y contraseña — Leira no está dirigida a
+          menores de 14 años.
+        </p>
+        <p>
+          Al usar Leira te comprometes a hacerlo de forma diligente y lícita: no introducir
+          Referencias Catastrales ni datos con el fin de perjudicar a terceros, no intentar
+          vulnerar la seguridad de la app o de sus servicios en la nube, y no usar la aplicación
+          para ningún fin distinto de la gestión de tus propias fincas.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="propiedad">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Propiedad intelectual e industrial</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          El código fuente, el diseño, los textos, el nombre "Leira" y su logotipo son propiedad
+          del titular indicado en el apartado 1, salvo que se indique lo contrario, y están
+          protegidos por la normativa de propiedad intelectual e industrial. No se concede
+          ninguna licencia ni autorización de uso sobre estos elementos más allá de la
+          estrictamente necesaria para el uso normal de la app.
+        </p>
+        <p class="muted">
+          Los datos catastrales, cartográficos y meteorológicos que la app consulta y muestra
+          proceden de organismos públicos y proveedores de terceros (Dirección General del
+          Catastro, OpenStreetMap/Esri, Open-Meteo) y se rigen por sus propias condiciones de
+          uso y licencias — Leira no reclama ninguna titularidad sobre esos datos, solo los
+          presenta de forma útil dentro de la app.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="terceros">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Servicios y enlaces de terceros</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Leira usa servicios de terceros para funcionar (Dirección General del Catastro,
+          Supabase, Google Play/AdMob/Gemini, RevenueCat, Open-Meteo, Esri/OpenStreetMap,
+          QuickChart.io) y puede enlazar a aplicaciones externas de navegación (Google Maps,
+          Waze, Apple Maps) al usar "Cómo llegar" o "Compartir". El detalle de qué datos recibe
+          cada uno está en la <a href="../">Política de Privacidad</a>. El titular no se hace
+          responsable del contenido, disponibilidad o políticas de esos servicios externos, que
+          se rigen por sus propias condiciones.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="responsabilidad">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Exclusión de responsabilidad</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Leira se ofrece "tal cual", poniendo un cuidado razonable en su funcionamiento, pero
+          sin poder garantizar que esté libre de errores o interrupciones en todo momento. Los
+          datos catastrales, meteorológicos y de mapas se muestran tal como los proporcionan sus
+          fuentes oficiales o proveedores, sin que el titular pueda garantizar su exactitud
+          absoluta ni asumir responsabilidad por decisiones tomadas únicamente en base a ellos —
+          para cualquier trámite oficial, la fuente de referencia sigue siendo la Sede
+          Electrónica del Catastro. El titular no responde de daños indirectos derivados del uso
+          de la app, salvo en los casos en que la ley no permita limitar esa responsabilidad.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="legislacion">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Legislación aplicable y jurisdicción</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Este aviso legal se rige por la legislación española. Para cualquier controversia
+          derivada del acceso o uso de este sitio o de la app, y en la medida en que lo permita
+          la normativa de protección de personas consumidoras y usuarias, las partes se someten
+          a los juzgados y tribunales que correspondan conforme a dicha normativa.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="modificaciones">
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Modificaciones</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          El titular puede modificar este aviso legal cuando sea necesario para reflejar cambios
+          normativos o del propio servicio. Cualquier cambio relevante se reflejará actualizando
+          la fecha de "Última actualización" al principio de este documento.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="doc-foot">
+    <div class="doc-foot-row">
+      <span>© 2026 Leira</span>
+      <a class="back-top" href="#top">↑ Volver arriba</a>
+    </div>
+    <nav class="legal-links" aria-label="Otros documentos legales">
+      <a href="../">Privacidad</a><span class="sep">·</span>
+      <strong>Aviso legal</strong><span class="sep">·</span>
+      <a href="../terminos/">Términos y condiciones</a><span class="sep">·</span>
+      <a href="../eliminar-cuenta/">Eliminar cuenta</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>

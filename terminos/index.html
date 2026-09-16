@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Términos y Condiciones de Leira</title>
+<meta name="description" content="Condiciones de uso de la app Leira: cuentas, funcionalidades gratuitas y Premium, suscripciones mediante Google Play, cancelación y eliminación de cuenta.">
+<link rel="icon" href="data:,">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #fbfaf6;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --text: #1c211d;
+    --text-secondary: #565f58;
+    --text-faint: #8a9089;
+    --border: #e2e4dd;
+    --border-strong: #c9cdc2;
+    --accent: #2e6b32;
+    --accent-strong: #1f4d23;
+    --accent-soft: #eaf2e9;
+    --mark-bg: #1c211d;
+    --shadow: 0 1px 2px rgba(28, 33, 29, 0.04), 0 8px 24px rgba(28, 33, 29, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #18181b;
+      --surface: #202124;
+      --surface-raised: #24262a;
+      --text: #f2f3ef;
+      --text-secondary: #a7ada3;
+      --text-faint: #767c73;
+      --border: #34373a;
+      --border-strong: #45494c;
+      --accent: #34d399;
+      --accent-strong: #6ee7b7;
+      --accent-soft: rgba(52, 211, 153, 0.12);
+      --mark-bg: #34d399;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #18181b;
+    --surface: #202124;
+    --surface-raised: #24262a;
+    --text: #f2f3ef;
+    --text-secondary: #a7ada3;
+    --text-faint: #767c73;
+    --border: #34373a;
+    --border-strong: #45494c;
+    --accent: #34d399;
+    --accent-strong: #6ee7b7;
+    --accent-soft: rgba(52, 211, 153, 0.12);
+    --mark-bg: #34d399;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-strong); text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  /* ---------- Cabecera ---------- */
+  header.doc-head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 36px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    flex: none;
+  }
+
+  .brand-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  h1.doc-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.12;
+    margin: 4px 0 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-top: 4px;
+  }
+
+  .meta-chip {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  .doc-summary {
+    color: var(--text-secondary);
+    font-size: 16.5px;
+    max-width: 62ch;
+    margin: 6px 0 0;
+  }
+
+  /* ---------- Indice ---------- */
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow);
+  }
+
+  nav.toc h2 {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  nav.toc li a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 14.5px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 3px 0;
+  }
+
+  nav.toc li a:hover { color: var(--accent-strong); }
+
+  nav.toc .toc-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  /* ---------- Secciones ---------- */
+  section.doc-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    padding-top: 3px;
+  }
+
+  h2.section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-body { padding-left: 30px; max-width: 66ch; }
+  .section-body > *:first-child { margin-top: 0; }
+
+  .section-body p { margin: 0 0 14px; color: var(--text); }
+  .section-body p.muted { color: var(--text-secondary); }
+
+  h3.sub-title {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 22px 0 6px;
+    color: var(--text);
+  }
+
+  .section-body ul, .section-body ol.plain {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+  .section-body li { margin-bottom: 7px; }
+  .section-body li:last-child { margin-bottom: 0; }
+
+  /* Tarjeta de dato: icono + texto, usada para el bloque "qué datos recogemos" */
+  .data-block {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .data-block:last-child { margin-bottom: 0; }
+  .data-block h4 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .data-block h4 .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .data-block p { margin: 0; font-size: 14.5px; color: var(--text-secondary); }
+
+  /* Tabla de encargados de tratamiento */
+  .provider-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 4px 0 16px;
+  }
+  .provider-table th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    text-align: left;
+    padding: 0 12px 8px 0;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .provider-table td {
+    padding: 11px 12px 11px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+  .provider-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .provider-table tr:last-child td { border-bottom: none; }
+  .table-scroll { overflow-x: auto; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    color: var(--text);
+    margin: 4px 0 16px;
+  }
+  .callout strong { color: var(--accent-strong); }
+
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 4px 0 16px;
+  }
+  .right-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--surface);
+  }
+  .right-item .right-name { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+  .right-item .right-desc { font-size: 13px; color: var(--text-secondary); }
+
+  code.placeholder {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+
+  /* ---------- Pie ---------- */
+  footer.doc-foot {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+  .doc-foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--text-secondary); }
+  .back-top {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+  .legal-links {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .legal-links a { color: var(--text-secondary); }
+  .legal-links strong { color: var(--text); font-weight: 500; }
+  .legal-links .sep { color: var(--border-strong); }
+
+  @media (max-width: 620px) {
+    .page { padding: 36px 18px 72px; }
+    nav.toc ol { grid-template-columns: 1fr; }
+    .section-body { padding-left: 0; }
+    .section-head { gap: 8px; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="top">
+
+  <header class="doc-head">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 3C10.2 3 5.5 7.6 5.5 13.3 5.5 21 16 29 16 29s10.5-8 10.5-15.7C26.5 7.6 21.8 3 16 3z" fill="var(--mark-bg)"/>
+        <path d="M16 8.5v11M10.8 11.6l10.4 4.8M21.2 11.6L10.8 16.4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Leira</span>
+    </div>
+
+    <h1 class="doc-title">Términos y Condiciones</h1>
+
+    <div class="doc-meta">
+      <span class="meta-chip">Última actualización: 16 sep. 2026</span>
+      <span class="meta-chip">Versión de la app: 1.0.0</span>
+      <span class="meta-chip">com.leira.app</span>
+    </div>
+
+    <p class="doc-summary">
+      Estos términos regulan el uso de la aplicación Leira: qué puedes hacer con una cuenta
+      gratuita, qué añade la suscripción Premium, cómo funcionan los pagos a través de Google
+      Play y cómo cancelar o eliminar tu cuenta.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Índice">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#aceptacion"><span class="toc-num">01</span> Aceptación de los términos</a></li>
+      <li><a href="#cuentas"><span class="toc-num">02</span> Uso de la app y cuentas</a></li>
+      <li><a href="#gratuito"><span class="toc-num">03</span> Funcionalidades gratuitas</a></li>
+      <li><a href="#premium"><span class="toc-num">04</span> Funcionalidades Premium</a></li>
+      <li><a href="#pagos"><span class="toc-num">05</span> Suscripciones y pagos</a></li>
+      <li><a href="#cancelacion"><span class="toc-num">06</span> Renovación y cancelación</a></li>
+      <li><a href="#eliminacion"><span class="toc-num">07</span> Eliminación de cuenta</a></li>
+      <li><a href="#responsabilidad"><span class="toc-num">08</span> Responsabilidad del usuario</a></li>
+      <li><a href="#propiedad"><span class="toc-num">09</span> Propiedad intelectual</a></li>
+      <li><a href="#cambios"><span class="toc-num">10</span> Cambios en el servicio y los términos</a></li>
+      <li><a href="#legislacion"><span class="toc-num">11</span> Legislación y contacto</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section class="doc-section" id="aceptacion">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Aceptación de los términos</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Al instalar, registrarte o usar Leira aceptas estos términos y condiciones, junto con
+          la <a href="../">Política de Privacidad</a> y el <a href="../aviso-legal/">Aviso
+          Legal</a>. Si no estás de acuerdo con alguno de ellos, no debes usar la aplicación.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="cuentas">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Uso de la app y cuentas</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Puedes usar Leira de dos formas: como <strong>invitado</strong>, sin crear ninguna
+          cuenta (tus fincas, puntos, fotos, movimientos y cultivos se guardan únicamente en tu
+          dispositivo), o con una <strong>cuenta</strong> registrada con email y contraseña
+          verificada por código, que además sincroniza tus datos en la nube para que estén
+          disponibles si usas la misma cuenta en otro móvil.
+        </p>
+        <p>
+          Eres responsable de mantener la confidencialidad de tu contraseña y de la veracidad de
+          los datos que introduces (Referencias Catastrales, alias, notas, importes). Leira no
+          está dirigida a menores de 14 años.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="gratuito">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Funcionalidades gratuitas</h2>
+      </div>
+      <div class="section-body">
+        <p>Sin necesidad de suscripción, Leira permite de forma gratuita:</p>
+        <ul>
+          <li>Registrar fincas por Referencia Catastral, ver su mapa, polígono y ficha técnica.</li>
+          <li>Añadir puntos de interés y fotografías a cada finca.</li>
+          <li>Consultar la previsión meteorológica de la parcela.</li>
+          <li>Generar el informe técnico de la finca en PDF.</li>
+          <li>Llevar la gestión económica y los cultivos de cada finca, con un número limitado
+            de movimientos económicos guardados por finca.</li>
+          <li>Sincronizar tus datos entre dispositivos si usas una cuenta con sesión iniciada.</li>
+        </ul>
+        <p class="muted">
+          La versión gratuita incluye publicidad (Google AdMob) en algunas pantallas.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="premium">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Funcionalidades Premium</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Una suscripción Premium, cuando está disponible y activa, amplía la app con:
+        </p>
+        <ul>
+          <li>Movimientos económicos ilimitados por finca (en vez del límite del plan gratuito).</li>
+          <li>Uso ilimitado del escáner de tickets con inteligencia artificial.</li>
+          <li>Más espacio de almacenamiento en la nube para tus fotografías.</li>
+          <li>Navegación sin publicidad.</li>
+        </ul>
+        <div class="callout">
+          <strong>Nota</strong>: qué funciones concretas incluye cada plan y sus límites exactos
+          pueden variar con el tiempo — la referencia siempre es lo que se muestre dentro de la
+          propia app en el momento de usarla.
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="pagos">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Suscripciones y pagos mediante Google Play</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Cuando la suscripción Premium esté disponible para compra, el pago se procesa
+          íntegramente a través de <strong>Google Play Billing</strong> y queda sujeto a los
+          términos de servicio y a la forma de pago que tengas configurada en tu cuenta de
+          Google. Leira no almacena ni tiene acceso a los datos de tu tarjeta o método de pago;
+          únicamente recibe de <strong>RevenueCat</strong>, nuestro proveedor de gestión de
+          suscripciones, la confirmación de que tu suscripción está activa.
+        </p>
+        <p>
+          El precio, la periodicidad de cobro y cualquier oferta introductoria o periodo de
+          prueba disponible se muestran siempre en la ficha de Google Play antes de confirmar la
+          compra — este documento no fija ningún precio ni condición comercial concreta, ya que
+          pueden variar y se definen en la propia tienda.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="cancelacion">
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <h2 class="section-title">Renovación y cancelación</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Las suscripciones Premium se renuevan automáticamente al final de cada periodo salvo
+          que las canceles antes de esa fecha. Puedes cancelarla en cualquier momento desde la
+          gestión de suscripciones de Google Play en tu dispositivo Android — la cancelación
+          evita el siguiente cobro, pero mantienes el acceso Premium hasta el final del periodo
+          ya pagado. Los reembolsos, si proceden, se gestionan conforme a la política de
+          reembolsos de Google Play, no directamente por Leira.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="eliminacion">
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <h2 class="section-title">Eliminación de cuenta</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Puedes eliminar tu cuenta y tus datos en cualquier momento desde el menú de perfil de
+          la app. El proceso completo, qué datos se eliminan y qué hacer si no puedes acceder a
+          tu cuenta están explicados en la página
+          <a href="../eliminar-cuenta/">Eliminar cuenta</a>.
+        </p>
+        <div class="callout">
+          <strong>Importante</strong>: eliminar tu cuenta en Leira borra tus datos de nuestros
+          sistemas, pero <strong>no cancela por sí sola</strong> una suscripción Premium activa
+          en Google Play. Si tienes una suscripción activa y no quieres que se te siga cobrando,
+          cancélala también desde Google Play antes o después de eliminar la cuenta.
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="responsabilidad">
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <h2 class="section-title">Responsabilidad del usuario</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Eres responsable del uso que hagas de la app y de la exactitud de los datos que
+          introduces. No debes usar Leira para introducir información falsa sobre fincas que no
+          te pertenecen ni con intención de perjudicar a terceros, ni intentar vulnerar la
+          seguridad de la app, de la cuenta de otro usuario o de los servicios en la nube que la
+          sustentan.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="propiedad">
+      <div class="section-head">
+        <span class="section-num">09</span>
+        <h2 class="section-title">Propiedad intelectual</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          La app, su código, diseño, marca y logotipo son propiedad del titular identificado en
+          el <a href="../aviso-legal/">Aviso Legal</a>. Los datos que tú introduces (fincas,
+          fotos, notas, movimientos) siguen siendo tuyos — los tratamos únicamente para prestarte
+          el servicio, conforme a la <a href="../">Política de Privacidad</a>.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="cambios">
+      <div class="section-head">
+        <span class="section-num">10</span>
+        <h2 class="section-title">Cambios en el servicio y en estos términos</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Podemos actualizar, añadir o retirar funcionalidades de Leira con el tiempo, así como
+          modificar estos términos para reflejar esos cambios o novedades normativas. Los
+          cambios relevantes se indicarán actualizando la fecha de "Última actualización" al
+          principio de este documento y, cuando sea significativo, también dentro de la propia
+          app.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="legislacion">
+      <div class="section-head">
+        <span class="section-num">11</span>
+        <h2 class="section-title">Legislación aplicable y contacto</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Estos términos se rigen por la legislación española. Para cualquier duda sobre ellos,
+          escríbenos a <a href="mailto:info.leira.app@gmail.com">info.leira.app@gmail.com</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="doc-foot">
+    <div class="doc-foot-row">
+      <span>© 2026 Leira</span>
+      <a class="back-top" href="#top">↑ Volver arriba</a>
+    </div>
+    <nav class="legal-links" aria-label="Otros documentos legales">
+      <a href="../">Privacidad</a><span class="sep">·</span>
+      <a href="../aviso-legal/">Aviso legal</a><span class="sep">·</span>
+      <strong>Términos y condiciones</strong><span class="sep">·</span>
+      <a href="../eliminar-cuenta/">Eliminar cuenta</a>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>

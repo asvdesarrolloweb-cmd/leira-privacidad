@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eliminar tu cuenta de Leira</title>
+<meta name="description" content="Cómo eliminar tu cuenta de Leira desde la app, qué datos se borran, qué podría conservarse por obligación legal y qué hacer si no puedes acceder.">
+<link rel="icon" href="data:,">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #fbfaf6;
+    --surface: #ffffff;
+    --surface-raised: #ffffff;
+    --text: #1c211d;
+    --text-secondary: #565f58;
+    --text-faint: #8a9089;
+    --border: #e2e4dd;
+    --border-strong: #c9cdc2;
+    --accent: #2e6b32;
+    --accent-strong: #1f4d23;
+    --accent-soft: #eaf2e9;
+    --mark-bg: #1c211d;
+    --shadow: 0 1px 2px rgba(28, 33, 29, 0.04), 0 8px 24px rgba(28, 33, 29, 0.05);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #18181b;
+      --surface: #202124;
+      --surface-raised: #24262a;
+      --text: #f2f3ef;
+      --text-secondary: #a7ada3;
+      --text-faint: #767c73;
+      --border: #34373a;
+      --border-strong: #45494c;
+      --accent: #34d399;
+      --accent-strong: #6ee7b7;
+      --accent-soft: rgba(52, 211, 153, 0.12);
+      --mark-bg: #34d399;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #18181b;
+    --surface: #202124;
+    --surface-raised: #24262a;
+    --text: #f2f3ef;
+    --text-secondary: #a7ada3;
+    --text-faint: #767c73;
+    --border: #34373a;
+    --border-strong: #45494c;
+    --accent: #34d399;
+    --accent-strong: #6ee7b7;
+    --accent-soft: rgba(52, 211, 153, 0.12);
+    --mark-bg: #34d399;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body { margin: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: var(--accent-strong); text-decoration-color: var(--border-strong); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: currentColor; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 24px 96px;
+  }
+
+  /* ---------- Cabecera ---------- */
+  header.doc-head {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 36px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 30px;
+    height: 30px;
+    flex: none;
+  }
+
+  .brand-name {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.01em;
+  }
+
+  h1.doc-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(32px, 5vw, 44px);
+    line-height: 1.12;
+    margin: 4px 0 0;
+    text-wrap: balance;
+    color: var(--text);
+  }
+
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+    margin-top: 4px;
+  }
+
+  .meta-chip {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: var(--text-secondary);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 5px 12px;
+    white-space: nowrap;
+  }
+
+  .doc-summary {
+    color: var(--text-secondary);
+    font-size: 16.5px;
+    max-width: 62ch;
+    margin: 6px 0 0;
+  }
+
+  /* ---------- Indice ---------- */
+  nav.toc {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 24px;
+    margin-bottom: 48px;
+    box-shadow: var(--shadow);
+  }
+
+  nav.toc h2 {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 0 0 14px;
+    font-weight: 500;
+  }
+
+  nav.toc ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px 24px;
+  }
+
+  nav.toc li a {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    font-size: 14.5px;
+    color: var(--text);
+    text-decoration: none;
+    padding: 3px 0;
+  }
+
+  nav.toc li a:hover { color: var(--accent-strong); }
+
+  nav.toc .toc-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  /* ---------- Secciones ---------- */
+  section.doc-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 24px;
+  }
+  section.doc-section:last-of-type { border-bottom: none; }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .section-num {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 14px;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+    flex: none;
+    padding-top: 3px;
+  }
+
+  h2.section-title {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-weight: 600;
+    font-size: 25px;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .section-body { padding-left: 30px; max-width: 66ch; }
+  .section-body > *:first-child { margin-top: 0; }
+
+  .section-body p { margin: 0 0 14px; color: var(--text); }
+  .section-body p.muted { color: var(--text-secondary); }
+
+  h3.sub-title {
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    margin: 22px 0 6px;
+    color: var(--text);
+  }
+
+  .section-body ul, .section-body ol.plain {
+    margin: 0 0 14px;
+    padding-left: 20px;
+  }
+  .section-body li { margin-bottom: 7px; }
+  .section-body li:last-child { margin-bottom: 0; }
+
+  .section-body ol.plain { list-style: decimal; }
+
+  /* Tarjeta de dato: icono + texto, usada para el bloque "qué datos recogemos" */
+  .data-block {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+  }
+  .data-block:last-child { margin-bottom: 0; }
+  .data-block h4 {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .data-block h4 .dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--accent);
+    flex: none;
+  }
+  .data-block p { margin: 0; font-size: 14.5px; color: var(--text-secondary); }
+
+  /* Tabla de encargados de tratamiento */
+  .provider-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 4px 0 16px;
+  }
+  .provider-table th {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    text-align: left;
+    padding: 0 12px 8px 0;
+    border-bottom: 1px solid var(--border-strong);
+  }
+  .provider-table td {
+    padding: 11px 12px 11px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-secondary);
+  }
+  .provider-table td:first-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+  .provider-table tr:last-child td { border-bottom: none; }
+  .table-scroll { overflow-x: auto; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+    padding: 14px 18px;
+    font-size: 14.5px;
+    color: var(--text);
+    margin: 4px 0 16px;
+  }
+  .callout strong { color: var(--accent-strong); }
+
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 4px 0 16px;
+  }
+  .right-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    background: var(--surface);
+  }
+  .right-item .right-name { font-weight: 700; font-size: 14px; margin-bottom: 3px; }
+  .right-item .right-desc { font-size: 13px; color: var(--text-secondary); }
+
+  code.placeholder {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 13px;
+    background: var(--accent-soft);
+    color: var(--accent-strong);
+    padding: 2px 6px;
+    border-radius: 5px;
+  }
+
+  /* ---------- Pie ---------- */
+  footer.doc-foot {
+    margin-top: 48px;
+    padding-top: 28px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+  .doc-foot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  footer.doc-foot a { color: var(--text-secondary); }
+  .back-top {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+  }
+  .legal-links {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .legal-links a { color: var(--text-secondary); }
+  .legal-links strong { color: var(--text); font-weight: 500; }
+  .legal-links .sep { color: var(--border-strong); }
+
+  @media (max-width: 620px) {
+    .page { padding: 36px 18px 72px; }
+    nav.toc ol { grid-template-columns: 1fr; }
+    .section-body { padding-left: 0; }
+    .section-head { gap: 8px; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page" id="top">
+
+  <header class="doc-head">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 3C10.2 3 5.5 7.6 5.5 13.3 5.5 21 16 29 16 29s10.5-8 10.5-15.7C26.5 7.6 21.8 3 16 3z" fill="var(--mark-bg)"/>
+        <path d="M16 8.5v11M10.8 11.6l10.4 4.8M21.2 11.6L10.8 16.4" stroke="var(--accent)" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Leira</span>
+    </div>
+
+    <h1 class="doc-title">Eliminar tu cuenta</h1>
+
+    <div class="doc-meta">
+      <span class="meta-chip">Última actualización: 16 sep. 2026</span>
+      <span class="meta-chip">Versión de la app: 1.0.0</span>
+      <span class="meta-chip">com.leira.app</span>
+    </div>
+
+    <p class="doc-summary">
+      Esta página explica cómo eliminar tu cuenta de Leira y tus datos asociados, sin necesidad
+      de iniciar sesión para leerla. Aplica solo a cuentas registradas con email — el modo
+      invitado no crea ninguna cuenta que eliminar, basta con desinstalar la app.
+    </p>
+  </header>
+
+  <nav class="toc" aria-label="Índice">
+    <h2>Índice</h2>
+    <ol>
+      <li><a href="#pasos"><span class="toc-num">01</span> Cómo eliminar tu cuenta</a></li>
+      <li><a href="#elimina"><span class="toc-num">02</span> Qué se elimina</a></li>
+      <li><a href="#conserva"><span class="toc-num">03</span> Qué podría conservarse</a></li>
+      <li><a href="#suscripcion"><span class="toc-num">04</span> Tu suscripción de Google Play</a></li>
+      <li><a href="#sinacceso"><span class="toc-num">05</span> Si no puedes acceder</a></li>
+    </ol>
+  </nav>
+
+  <main>
+
+    <section class="doc-section" id="pasos">
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2 class="section-title">Cómo eliminar tu cuenta desde la app</h2>
+      </div>
+      <div class="section-body">
+        <p>La eliminación de cuenta se hace directamente dentro de la app Leira, con la cuenta ya iniciada:</p>
+        <ol class="plain">
+          <li>Abre Leira e inicia sesión con tu cuenta, si no lo has hecho ya.</li>
+          <li>Toca el icono de perfil, arriba a la derecha en "Mapa" o "Mis fincas", para abrir el menú de cuenta.</li>
+          <li>Selecciona <strong>"Eliminar cuenta"</strong>.</li>
+          <li>Introduce tu contraseña para confirmar que eres tú.</li>
+          <li>Confirma en el aviso final — este paso es irreversible.</li>
+        </ol>
+        <div class="callout">
+          <strong>Importante</strong>: el borrado es inmediato y permanente en cuanto lo
+          confirmas. No existe periodo de gracia ni una forma de recuperar la cuenta después.
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="elimina">
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Qué se elimina</h2>
+      </div>
+      <div class="section-body">
+        <p>Al eliminar tu cuenta se borran, tanto de nuestros servidores como de este dispositivo:</p>
+        <div class="data-block">
+          <h4><span class="dot"></span>Tu cuenta y credenciales</h4>
+          <p>Tu email y tu contraseña dejan de existir — no podrás volver a iniciar sesión con ellos.</p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>Tus fincas y sus datos</h4>
+          <p>Todas las fincas de la cuenta, junto con sus puntos de interés, movimientos económicos y cultivos, tanto la copia en la nube como la guardada en este dispositivo.</p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>Tus fotografías</h4>
+          <p>Las fotos que hayas guardado en el dispositivo y las que se hubieran subido a nuestro almacenamiento en la nube.</p>
+        </div>
+        <div class="data-block">
+          <h4><span class="dot"></span>Perfil y notificaciones</h4>
+          <p>Tu alias, avatar y el registro de notificaciones asociado a la cuenta.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="conserva">
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Qué podría conservarse por obligación legal</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Fuera de lo anterior, no conservamos ninguna copia de tus datos tras la eliminación.
+          La única excepción sería información que una ley nos obligue a retener por un
+          periodo determinado — por ejemplo, los registros de facturación de una compra ya
+          realizada, que gestiona directamente Google Play y no Leira, y que se rigen por las
+          propias obligaciones legales de Google como plataforma de pago.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="suscripcion">
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Tu suscripción de Google Play no se cancela sola</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Eliminar tu cuenta en Leira borra tus datos, pero <strong>no cancela automáticamente</strong>
+          una suscripción Premium activa: esa suscripción vive en tu cuenta de Google Play, no
+          en la nuestra. Si tienes una suscripción activa, cancélala tú mismo desde la app
+          Google Play → Pagos y suscripciones → Suscripciones, para que no se te vuelva a
+          cobrar.
+        </p>
+      </div>
+    </section>
+
+    <section class="doc-section" id="sinacceso">
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2 class="section-title">Si no puedes acceder a tu cuenta</h2>
+      </div>
+      <div class="section-body">
+        <p>
+          Si has perdido el acceso a tu cuenta (contraseña olvidada sin poder recuperarla,
+          dispositivo perdido, etc.) y quieres que eliminemos tus datos igualmente, escríbenos a
+          <a href="mailto:info.leira.app@gmail.com">info.leira.app@gmail.com</a> desde el mismo
+          correo con el que te registraste en Leira, indicando que quieres eliminar tu cuenta.
+          Podemos pedirte alguna comprobación adicional para confirmar que la solicitud es tuya
+          antes de proceder.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="doc-foot">
+    <div class="doc-foot-row">
+      <span>© 2026 Leira</span>
+      <a class="back-top" href="#top">↑ Volver arriba</a>
+    </div>
+    <nav class="legal-links" aria-label="Otros documentos legales">
+      <a href="../">Privacidad</a><span class="sep">·</span>
+      <a href="../aviso-legal/">Aviso legal</a><span class="sep">·</span>
+      <a href="../terminos/">Términos y condiciones</a><span class="sep">·</span>
+      <strong>Eliminar cuenta</strong>
+    </nav>
+  </footer>
+
+</div>
+</body>
+</html>

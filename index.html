@@ -147,6 +147,59 @@
     margin: 6px 0 0;
   }
 
+  /* ---------- Índice legal (bloque superior, enlaza a los 4 documentos) ---------- */
+  nav.legal-index {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 18px 22px;
+    margin-bottom: 40px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 18px;
+  }
+
+  .legal-index-label {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    font-weight: 500;
+    flex: none;
+  }
+
+  .legal-index-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .legal-index-link, .legal-index-current {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 13.5px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    white-space: nowrap;
+  }
+
+  .legal-index-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    background: var(--bg);
+  }
+  .legal-index-link:hover { color: var(--accent-strong); border-color: var(--border-strong); }
+
+  .legal-index-current {
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+    border-color: var(--accent-soft);
+  }
+
   /* ---------- Indice ---------- */
   nav.toc {
     background: var(--surface);
@@ -344,12 +397,17 @@
     padding-top: 28px;
     border-top: 1px solid var(--border);
     display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 13.5px;
+    color: var(--text-faint);
+  }
+  .doc-foot-row {
+    display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 16px;
     flex-wrap: wrap;
-    font-size: 13.5px;
-    color: var(--text-faint);
   }
   footer.doc-foot a { color: var(--text-secondary); }
   .back-top {
@@ -357,9 +415,21 @@
     font-size: 12px;
     letter-spacing: 0.03em;
   }
+  .legal-links {
+    font-family: 'IBM Plex Mono', ui-monospace, monospace;
+    font-size: 12px;
+    color: var(--text-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+  }
+  .legal-links a { color: var(--text-secondary); }
+  .legal-links strong { color: var(--text); font-weight: 500; }
+  .legal-links .sep { color: var(--border-strong); }
 
   @media (max-width: 620px) {
     .page { padding: 36px 18px 72px; }
+    nav.legal-index { flex-direction: column; align-items: flex-start; gap: 12px; }
     nav.toc ol { grid-template-columns: 1fr; }
     .section-body { padding-left: 0; }
     .section-head { gap: 8px; }
@@ -383,7 +453,7 @@
     <h1 class="doc-title">Política de Privacidad</h1>
 
     <div class="doc-meta">
-      <span class="meta-chip">Última actualización: 8 sep. 2026</span>
+      <span class="meta-chip">Última actualización: 16 sep. 2026</span>
       <span class="meta-chip">Versión de la app: 1.0.0</span>
       <span class="meta-chip">com.leira.app</span>
     </div>
@@ -394,6 +464,16 @@
       explica qué datos tratamos, para qué, con quién los compartimos y qué derechos tienes.
     </p>
   </header>
+
+  <nav class="legal-index" aria-label="Información legal de Leira">
+    <span class="legal-index-label">Información legal de Leira</span>
+    <div class="legal-index-links">
+      <span class="legal-index-current">Política de Privacidad</span>
+      <a class="legal-index-link" href="aviso-legal/">Aviso Legal</a>
+      <a class="legal-index-link" href="terminos/">Términos y Condiciones</a>
+      <a class="legal-index-link" href="eliminar-cuenta/">Eliminación de cuenta</a>
+    </div>
+  </nav>
 
   <nav class="toc" aria-label="Índice">
     <h2>Índice</h2>
@@ -450,8 +530,7 @@
           <p>
             Si te registras con correo, tratamos tu dirección de email y una contraseña
             (almacenada de forma cifrada, nunca en texto plano) para verificar tu identidad
-            mediante un código de un solo uso. Si entras con Google, recibimos tu email y tu
-            identificador de cuenta de Google a través del proveedor de autenticación.
+            mediante un código de un solo uso.
           </p>
         </div>
         <div class="data-block">
@@ -487,9 +566,11 @@
           <h4><span class="dot"></span>Fotografías</h4>
           <p>
             Las fotos que tomas o eliges de tu galería se guardan en el dispositivo junto con su
-            fecha y, si están disponibles, sus coordenadas GPS. Las fotografías en sí
-            <strong>no se suben a la nube</strong> en esta versión de la app, ni siquiera con
-            sesión iniciada.
+            fecha y, si están disponibles, sus coordenadas GPS. Si tienes sesión iniciada, además
+            se suben (comprimidas) a nuestro almacenamiento en la nube en Supabase, dentro de un
+            límite de espacio según tu plan, para que estén disponibles si usas la misma cuenta
+            en otro móvil. En modo invitado, las fotografías permanecen únicamente en tu
+            dispositivo.
           </p>
         </div>
         <div class="data-block">
@@ -549,13 +630,8 @@
             <tbody>
               <tr>
                 <td>Supabase</td>
-                <td>Cuenta de usuario y copia en la nube de tus fincas/puntos/gastos/cultivos</td>
+                <td>Cuenta de usuario, copia en la nube de tus fincas/puntos/gastos/cultivos y almacenamiento de tus fotos</td>
                 <td>Email, contraseña cifrada, y los datos de la sección 02 si tienes sesión iniciada</td>
-              </tr>
-              <tr>
-                <td>Google (Sign-In)</td>
-                <td>Inicio de sesión con tu cuenta de Google</td>
-                <td>Email e identificador de cuenta de Google</td>
               </tr>
               <tr>
                 <td>Google (Gemini)</td>
@@ -624,8 +700,9 @@
           pides que borremos tus datos, los suprimimos de nuestros sistemas en un plazo máximo de
           30 días, salvo que la ley nos obligue a conservar alguna información por más tiempo
           (por ejemplo, registros fiscales de una compra). Los datos que solo viven en tu
-          dispositivo (modo invitado, fotografías) permanecen ahí hasta que los borres tú mismo
-          o desinstales la app.
+          dispositivo en modo invitado permanecen ahí hasta que los borres tú mismo o
+          desinstales la app; con sesión iniciada, tus fotografías se conservan también en la
+          nube igual que el resto de tus datos, conforme a lo indicado más arriba.
         </p>
       </div>
     </section>
@@ -732,8 +809,16 @@
   </main>
 
   <footer class="doc-foot">
-    <span>© 2026 Leira</span>
-    <a class="back-top" href="#top">↑ Volver arriba</a>
+    <div class="doc-foot-row">
+      <span>© 2026 Leira</span>
+      <a class="back-top" href="#top">↑ Volver arriba</a>
+    </div>
+    <nav class="legal-links" aria-label="Otros documentos legales">
+      <strong>Privacidad</strong><span class="sep">·</span>
+      <a href="aviso-legal/">Aviso legal</a><span class="sep">·</span>
+      <a href="terminos/">Términos y condiciones</a><span class="sep">·</span>
+      <a href="eliminar-cuenta/">Eliminar cuenta</a>
+    </nav>
   </footer>
 
 </div>
