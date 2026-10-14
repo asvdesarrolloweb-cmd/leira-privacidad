@@ -1,6 +1,6 @@
-# Documentación legal — Leira
+# Documentación legal — Leyra
 
-Sitio estático con la documentación legal de la app [Leira](https://github.com/), publicado vía
+Sitio estático con la documentación legal de la app [Leyra](https://github.com/), publicado vía
 GitHub Pages para tener URLs públicas y permanentes (sin login) que enlazar desde el menú de
 perfil de la app y desde la ficha de Google Play. Cuatro páginas, todas con el mismo diseño y
 enlazadas entre sí (bloque superior + pie de página):
