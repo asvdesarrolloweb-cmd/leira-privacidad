@@ -1,4 +1,4 @@
-# Movido a leyra-privacidad
+# Movido a agrolinde-privacidad
 
-Leira ahora se llama Leyra. Este repo solo redirige las direcciones antiguas a
-<https://asvdesarrolloweb-cmd.github.io/leyra-privacidad/> (mismas rutas). No borrar: la app y Google Play pueden seguir enlazando aquí.
+La app ahora se llama AgroLinde. Este repo solo redirige las direcciones antiguas a
+<https://asvdesarrolloweb-cmd.github.io/agrolinde-privacidad/> (mismas rutas). No borrar: versiones instaladas y Google Play pueden seguir enlazando aquí.
